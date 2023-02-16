@@ -1,104 +1,28 @@
 import os
-import shutil
-from helper import utility
 
-# Ask user to provide valid directory path
-directory = input("Enter the path of the directory: ")
-while not os.path.isdir(directory):
-    print("\n!!!Invalid directory path.")
-    directory = input("Please enter valid path or Enter 0 to exit: ")
-    if directory == '0': exit()
-
-# Get all the files/folder_names
-old_names_list = os.listdir(directory)
-
-# Show the welcome page
-utility.welcome(old_names_list)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ========================================================================
-# Open all the folders and then files from list of directories
-# ========================================================================
-# for directory in directories:
-#     # Rename the current subfolder - Remove Spaces
-#     os.chdir(root)
-#     if not os.path.isdir(directory): continue
-#     directory_old_name = directory
-#     directory_new_name = directory_old_name.replace(' ', '_')
-#     os.rename(directory_old_name, directory_new_name)
-
-#     # Change directory to sub-folder
-#     os.chdir(directory_new_name)
-#     current_directory = os.getcwd()
-#     curr_list = os.listdir(current_directory)
-#     curr_list = [dir_name for dir_name in curr_list if '.ico' not in dir_name]
-#     curr_list = [dir_name for dir_name in curr_list if '.ini' not in dir_name]
-#     # Remove the spaces from file_name
-#     old_file_name = curr_list[0]
-#     new_file_name = old_file_name.replace(' ', '_')
-#     os.rename(old_file_name, new_file_name)
-#     # print(new_file_name)
-
-#     # Open the renamed file
-#     file_path = os.path.join(current_directory, new_file_name)
-#     os.system("start " + file_path)
-# ========================================================================
+# file1 = open("MyFile1.txt","a")
+path_to_file = "E:\\Movies\\Attack On Titan\\Episodes.txt"
+with open(path_to_file) as f:
+    new_names = f.readlines()
+
+episodes_dir = "E:\\Movies\\Attack On Titan\\a"
+old_names = os.listdir(episodes_dir)
+# print(old_names)
+for video in old_names:
+	pass
+	# print(video)
+# print(len(old_names))
+
+for i in range(len(old_names)):
+	old_name = episodes_dir + "\\" + old_names[i]
+	new_name = episodes_dir + "\\" + new_names[i][:-1] + ".mkv"
+	print(old_name)
+	print(new_name)
+	os.rename(old_name, new_name)
+
+# episodeNamesFile = open(, "r")
+
+# for ele in new_names:
+# 	ele = ele[:len(ele)-1]
+# 	print(ele)
+# print(new_names)
